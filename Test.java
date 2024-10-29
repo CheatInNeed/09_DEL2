@@ -1,16 +1,16 @@
 public class Test {
-    int two = 0;
-    int three = 0;
-    int four = 0;
-    int five = 0;
-    int six = 0;
-    int seven = 0;
-    int eight = 0;
-    int nine = 0;
-    int ten = 0;
-    int eleven = 0;
-    int twelve = 0;
-    int negatives = 0;
+    private int two = 0;
+    private int three = 0;
+    private int four = 0;
+    private int five = 0;
+    private int six = 0;
+    private int seven = 0;
+    private int eight = 0;
+    private int nine = 0;
+    private int ten = 0;
+    private int eleven = 0;
+    private int twelve = 0;
+    private int negatives = 0;
 
     public void diceCounter(int sum){
         if (sum == 2) {
