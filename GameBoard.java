@@ -1,7 +1,6 @@
-class GameBoard {
+public class GameBoard {
     private int values[] = {250,-100,100,-20,180,0,-70,60,-80,-50,650}; 
-
-
+    
     public int getValue(int dieSum) {
         String output = switch (dieSum){
             case 2 -> "Congratulations! You have reached the Tower and has found 250 gold coins.";
