@@ -1,9 +1,9 @@
 import java.util.Random;
 
 public class Dice {
-    int die1;
-    int die2;
-    int dieSum;
+    private int die1;
+    private int die2;
+    private int dieSum;
 
     public static int RandomNumber(int min, int max) {
         Random random = new Random();
