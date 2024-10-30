@@ -26,6 +26,7 @@ public class Main {
             } else if(userInput.equals("stop")){
                 break;
             }
+            
         }
         for (Player player : players) {
             if (player.getMoney() >= 3000) {
