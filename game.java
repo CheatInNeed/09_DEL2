@@ -16,7 +16,7 @@ public class game {
 
         String userInput = scanner.nextLine();
 
-        Player[] players = new Player[2];
+        player[] players = new player[2];
         GameBoard board = new GameBoard();
         Dice dice = new Dice();
 
