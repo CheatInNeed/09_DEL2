@@ -19,6 +19,6 @@ public class GameBoard {
             default -> "Error! Unknown field reached. Restart game!";
         };
         System.out.println(output);
-        return values[dieSum];
+        return values[dieSum-2];
     }
 }
