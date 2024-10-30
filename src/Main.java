@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -11,15 +9,14 @@ public class Main {
         Player[] players = new Player[numOfPlayers];
         
         for (int i = 0; i < numOfPlayers; i++) {
-            System.out.println("Enter name for player " + i + ":");
+            System.out.println("Enter name for player " + i+1 + ":");
             Player player = new Player(scanner.nextLine());
             players[i] = player;
         }
 
         Game game = new Game(players);
-        
+        System.out.println("Play round by typing 'r'");
         while (!game.isWinning()){
-            System.out.println("Play the next round by typing 'r'");
             String userInput = scanner.nextLine().toLowerCase();
             if (userInput.equals("r")){
                 game.playTurn();
@@ -27,9 +24,10 @@ public class Main {
                 break;
             }
         }
+        scanner.close();
         for (Player player : players) {
             if (player.getMoney() >= 3000) {
-                System.out.println(player.getName()+" has won");
+                System.out.println(player.getName()+" has won: "+player.getMoney());
             }
         }
     }
