@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class game {
+public class Game {
 
     public static boolean isWinning(){
         if (getMoney() >= 3000){
