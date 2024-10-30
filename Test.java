@@ -69,10 +69,11 @@ public class Test {
         System.out.println("Testing has been initialized. Running "+ testTurns + " turns");
         var playerTest = new Player("Test"); // initializing Player object
         var test = new Test(); // initializing Test object
+        var board = new GameBoard();
 
         for (int i = 0; i < testTurns; i++){ // loop running the tests counting using methods from Test class
             int sum = playerTest.roll();
-            playerTest.setMoney(playerTest.getValue(sum));
+            playerTest.setMoney(board.getValue(sum));
             test.diceCounter(sum);
             test.negativeCounter(sum);
         }
