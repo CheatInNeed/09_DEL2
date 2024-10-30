@@ -57,12 +57,12 @@ public class Test {
         }
     }
     public void negativePrinter(){ // method for printing amount of times player money has been negative
-        System.out.print(negatives + " times.");
+        System.out.println(negatives + " times.");
         }
     public static void main(String[] args) {
         var scanner = new java.util.Scanner(System.in);
         scanner.useLocale(java.util.Locale.ENGLISH);
-        
+        System.out.println("How many turns would you like to test?");
         int testTurns = scanner.nextInt(); // Terminal input for amount of test turns
         scanner.close();
 
@@ -81,11 +81,11 @@ public class Test {
 
         // printing results
         System.out.println("Test for " + testTurns + " turns has been completed.");
-        System.out.println(playerTest.getName() + "now has " + playerTest.getMoney() + "gold coins.");
+        System.out.println("Player: "+ playerTest.getName() + " now has " + playerTest.getMoney() + " gold coins.");
         System.out.println("The die sum totals are:");
         test.dicePrinter();   
 
-        System.out.println("The coin total of "+ playerTest.getName() + "has been negative ");
+        System.out.println("The coin total of "+ playerTest.getName() + " has been negative ");
         test.negativePrinter();
     }
 }

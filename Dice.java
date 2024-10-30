@@ -23,5 +23,4 @@ class Dice {
     public int getDie2() {
         return die2;
     }
-
 }
