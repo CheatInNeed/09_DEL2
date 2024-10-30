@@ -7,32 +7,40 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(java.util.Locale.ENGLISH);
 
-        String userInput = scanner.nextLine();
+        int numOfPlayers = 2;
+        Player[] players = new Player[numOfPlayers];
+        
+        for (int i = 0; i < numOfPlayers; i++) {
+            System.out.println("Enter name for player " + i + ":");
+            Player player = new Player(scanner.nextLine());
+            players[i] = player;
+        }
 
-        Player[] players = new Player[2];
-        GameBoard board = new GameBoard();
-        Dice dice = new Dice();
-
-    while (!isWinning()){
-        System.out.println("Play the next round by typing 'r'");
-        if (userInput.equals("r")){
-        for (var n : players){
-
-            int diceSum = dice.roll();
-            int boardValue = board.getValue(diceSum);
-            
-            if (boardValue > 0){
-            System.out.println("Player " + n + " rolled: " + diceSum + " and goes to the field. " + boardValue + " amount of money has been added to your account.");
-            } else {System.out.println("Player " + n + " rolled: " + diceSum + " and goes to the field. " + boardValue + " amount of money has been withdrawed from your account.");}
-        } 
-    } else {}
-
-    }
-
-
-
-
-
-
+        Game game = new Game(players);
+        
+        while (!game.isWinning()){
+            System.out.println("Play the next round by typing 'r'");
+            String userInput = scanner.nextLine().toLowerCase();
+            if (userInput.equals("r")){
+                game.playTurn();
+            } else if(userInput.equals("stop")){
+                break;
+            }
+        }
+        for (Player player : players) {
+            if (player.getMoney() >= 3000) {
+                System.out.println(player.getName()+" has won");
+            }
+        }
     }
 }
+
+
+
+
+
+
+
+    
+
+

@@ -1,7 +1,7 @@
 public class Game {
-    Player[] players;
-    GameBoard board;
-    Dice dice;
+    private Player[] players;
+    private GameBoard board;
+    private Dice dice;
 
     public Game(Player[] players){
         this.players = players;
@@ -17,7 +17,9 @@ public class Game {
 
     public void playTurn(Player player){
         int sum = dice.roll();
+        player.setMoney(board.getValue(sum));
         System.out.println(player.getName()+" hit "+dice.getDie1() + " & " + dice.getDie2());
+        System.out.println("Your account is currently at: " + player.getMoney());
         if (sum == 10) {
             playTurn(player);
         }
